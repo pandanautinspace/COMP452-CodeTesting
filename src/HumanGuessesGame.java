@@ -12,7 +12,9 @@ public class HumanGuessesGame extends GuessingGame {
     private final int target;
 
     HumanGuessesGame(){
-        Random randGen = new Random();
+        this(new Random());
+    }
+    HumanGuessesGame(Random randGen){
         this.target = randGen.nextInt(UPPER_BOUND) + 1;
         numGuesses = 0;
     }

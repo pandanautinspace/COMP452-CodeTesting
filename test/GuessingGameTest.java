@@ -5,6 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class GuessingGameTest {
 
     @Test
-    void getNumGuesses() {
+    void testGetNumGuesses() {
+        GuessingGame a = new GuessingGame() {
+            @Override
+            public int getNumGuesses() {
+                return super.getNumGuesses();
+            }
+        };
+        assertEquals(a.getNumGuesses(), 0);
     }
 }

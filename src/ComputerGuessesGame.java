@@ -13,10 +13,10 @@ public class ComputerGuessesGame extends GuessingGame {
     private int upperBound; // correct number is <= upperBound
     private int lowerBound; // correct number is >= lowerBound
 
-    public ComputerGuessesGame() {
+    public ComputerGuessesGame(int lower, int upper) {
         numGuesses = 0;
-        upperBound = 1000;
-        lowerBound = 1;
+        upperBound = upper;
+        lowerBound = lower;
     }
 
     public int firstGuess() {

@@ -13,7 +13,7 @@ public class ComputerGuessesPanel extends JPanel {
 
     private ComputerGuessesGame game;
     public ComputerGuessesPanel(JPanel cardsPanel, Consumer<GameResult> gameFinishedCallback){
-        game = new ComputerGuessesGame();
+        game = new ComputerGuessesGame(1, 1000);
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
         JLabel guessMessage = new JLabel("I guess ___.");
