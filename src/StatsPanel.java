@@ -16,6 +16,8 @@ public class StatsPanel extends JPanel {
     // A bin goes from BIN_EDGES[i] through BIN_EDGES[i+1]-1, inclusive
     private ArrayList<JLabel> resultsLabels;
 
+    private StatsBin statsBin;
+
     public StatsPanel(JPanel cardsPanel) {
 
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -35,7 +37,9 @@ public class StatsPanel extends JPanel {
         resultsPanel.setLayout(new GridLayout(0, 2));
         resultsPanel.add(new JLabel("Guesses"));
         resultsPanel.add(new JLabel("Games"));
-        ArrayList<String> binNames = StatsBin.getBinNames();
+        int[] binEdges = {1, 2, 4, 6, 8, 10, 12, 14};
+        statsBin = new StatsBin(binEdges);
+        ArrayList<String> binNames = statsBin.getBinNames();
         for(String binName : binNames){
             resultsPanel.add(new JLabel(binName));
             JLabel result = new JLabel("--");
@@ -79,7 +83,7 @@ public class StatsPanel extends JPanel {
         clearResults();
 
         GameStats stats = new StatsFile();
-        ArrayList<Integer> numGames = StatsBin.getBinGames(stats);
+        ArrayList<Integer> numGames = statsBin.getBinGames(stats);
         for(int i = 0; i < resultsLabels.size(); i++) {
             JLabel resultLabel = resultsLabels.get(i);
             resultLabel.setText(Integer.toString(numGames.get(i)));

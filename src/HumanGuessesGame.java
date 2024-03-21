@@ -14,7 +14,6 @@ public class HumanGuessesGame extends GuessingGame {
     HumanGuessesGame(){
         Random randGen = new Random();
         this.target = randGen.nextInt(UPPER_BOUND) + 1;
-
         numGuesses = 0;
     }
 

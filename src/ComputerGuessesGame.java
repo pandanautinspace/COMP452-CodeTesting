@@ -24,17 +24,15 @@ public class ComputerGuessesGame extends GuessingGame {
 //        numGuesses += 1;
         return lastGuess;
     }
-    public int lowerGuess() {
+    public int makeLowerGuess() {
         upperBound = Math.min(upperBound, lastGuess);
-
         lastGuess = (lowerBound + upperBound + 1) / 2;
         numGuesses += 1;
         return lastGuess;
     }
 
-    public int higherGuess() {
+    public int makeHigherGuess() {
         lowerBound = Math.max(lowerBound, lastGuess + 1);
-
         lastGuess = (lowerBound + upperBound + 1) / 2;
         numGuesses += 1;
         return lastGuess;

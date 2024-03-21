@@ -70,7 +70,7 @@ public class GuessTheNumberUI {
         JPanel humanGuessesPanel = new HumanGuessesPanel(cardsPanel, (gameResult -> {
             gameOverPanel.setGameResults(gameResult);
             if(gameResult.humanWasPlaying){
-                gameResult.writeResults();
+                StatsFile.writeGameResults(gameResult);
             }
         }));
         addToCards(cardsPanel, humanGuessesPanel, ScreenID.HUMAN_PLAY.name());
