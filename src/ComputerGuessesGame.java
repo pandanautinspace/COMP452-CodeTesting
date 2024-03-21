@@ -5,8 +5,7 @@
  * Tracks the computer's guesses
  *
  */
-public class ComputerGuessesGame {
-    private int numGuesses;
+public class ComputerGuessesGame extends GuessingGame {
     private int lastGuess;
 
     // upperBound and lowerBound track the computer's knowledge about the correct number
@@ -45,7 +44,4 @@ public class ComputerGuessesGame {
         return lastGuess;
     }
 
-    public int getNumGuesses() {
-        return numGuesses;
-    }
 }
