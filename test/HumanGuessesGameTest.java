@@ -30,6 +30,7 @@ class HumanGuessesGameTest {
     @Test
     void testMultiGuessCorrectness() {
         Random r = new Random(0); //this will generate a value of 187
+        //dependency injection as well
         HumanGuessesGame h = new HumanGuessesGame(r);
         assertEquals(h.makeGuess(0), GuessResult.LOW);
         assertEquals(h.makeGuess(100), GuessResult.LOW);
