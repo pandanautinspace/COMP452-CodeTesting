@@ -69,8 +69,9 @@ public class GuessTheNumberUI {
         //       but refactor how those are structured, which means the lambda will need to change.
         JPanel humanGuessesPanel = new HumanGuessesPanel(cardsPanel, (gameResult -> {
             gameOverPanel.setGameResults(gameResult);
+            StatsFile s = new StatsFile();
             if(gameResult.humanWasPlaying){
-                StatsFile.writeGameResults(gameResult);
+                s.writeGameResults(gameResult);
             }
         }));
         addToCards(cardsPanel, humanGuessesPanel, ScreenID.HUMAN_PLAY.name());

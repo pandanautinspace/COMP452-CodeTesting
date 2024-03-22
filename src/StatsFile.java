@@ -67,7 +67,7 @@ public class StatsFile extends GameStats {
         return (statsMap.isEmpty() ? 0 : statsMap.lastKey());
     }
 
-    public static void writeGameResults(GameResult result) {
+    public void writeGameResults(GameResult result) {
         // write stats to file
         try(CSVWriter writer = new CSVWriter(new FileWriter(FILENAME, true))) {
 
